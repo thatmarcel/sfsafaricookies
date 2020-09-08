@@ -1,9 +1,9 @@
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = SFCookies
+TWEAK_NAME = SFSafariCookies
 
-SFCookies_FILES = Tweak.xm
-SFCookies_CFLAGS = -fobjc-arc
+SFSafariCookies_FILES = Tweak.xm
+SFSafariCookies_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
