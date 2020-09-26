@@ -21,11 +21,16 @@
 
 @interface _WKWebsiteDataStoreConfiguration: NSObject
     - (instancetype) init;
+
+    - (void) setSourceApplicationBundleIdentifier:(NSString*)bundleIdentifier;
+    - (void) setSourceApplicationSecondaryIdentifier:(NSString*)secondaryIdentifier;
 @end
 
 %hook WKWebViewConfiguration
     - (void) setWebsiteDataStore:(WKWebsiteDataStore *)store {
         _WKWebsiteDataStoreConfiguration *config = [[%c(_WKWebsiteDataStoreConfiguration) alloc] init];
+        [config setSourceApplicationBundleIdentifier: [store _sourceApplicationBundleIdentifier]];
+        [config setSourceApplicationSecondaryIdentifier: [store _sourceApplicationSecondaryIdentifier]];
         WKWebsiteDataStore *newStore = [%c(WKWebsiteDataStore) safari_dataStoreWithConfiguration: config];
         %orig(newStore);
     }
