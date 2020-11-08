@@ -1,0 +1,9 @@
+Package: com.thatmarcel.tweaks.sfsafaricookies
+Name: SFCookies
+Depends: mobilesubstrate
+Version: 1.0.2
+Architecture: iphoneos-arm
+Description: Make SFSafariViewController share cookies with Safari
+Maintainer: Marcel Braun
+Author: Marcel Braun
+Section: Tweaks
